@@ -327,10 +327,6 @@ const decoder = function (blob) {
           result.body.push(JSON.parse(body));
         }
       }
-      let body = textDecoder.decode(pako.inflate(data));
-          if (body) {
-              result.body.push(JSON.parse(body.slice(body.indexOf("{"))));
-          }
       offset += packetLen;
     }
   } else if (result.op === 3) {
